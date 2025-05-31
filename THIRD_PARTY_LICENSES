@@ -1,0 +1,30 @@
+# Third Party Licenses for MMCN Server Utils
+
+This project includes or links to the following third-party software components. These components are licensed separately and are not governed by the proprietary licensing of the rest of this project.
+
+---
+
+**NeoForge**  
+License: GNU Lesser General Public License v2.1 (LGPL-2.1)  
+Source: https://github.com/neoforged/NeoForge  
+Notes: NeoForge is a modification framework for Minecraft and is licensed under the LGPL, which allows linking in proprietary mods so long as the LGPL-licensed code remains accessible and unmodified.
+
+---
+
+**Minecraft (Game Code and Assets)**  
+Owner: Mojang Studios / Microsoft  
+License: Minecraft End User License Agreement (EULA)  
+Link: https://www.minecraft.net/eula  
+Notes: This mod interacts with Minecraft APIs and runtime provided by Mojang. Minecraft itself is proprietary and use of this mod requires a valid copy of the game. No assets or code from Mojang are redistributed by this project.
+
+---
+
+**Java Platform (Java SE Runtime and Development Kit)**  
+Owner: Oracle and/or OpenJDK contributors  
+License: GPLv2 with Classpath Exception (OpenJDK)  
+Link: https://openjdk.org/legal/gplv2+ce.html  
+Notes: This mod is compiled and executed on Java 21 using OpenJDK-compatible tooling.
+
+---
+
+This file is provided for attribution purposes only. Each third-party component listed is governed by its own license and terms of use.
