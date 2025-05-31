@@ -1,6 +1,6 @@
 # MMCN Server Utils
 
-A custom server-side utility mod for [The ModdedMC Network](https://moddedmc.net), built using NeoForge 1.21.1.
+A custom server-side utility mod for [The ModdedMC Network](https://moddedmc.net), built using NeoForge 21.1.172 for Minecraft 1.21.1.
 
 This mod provides essential infrastructure tools and staff utilities designed to improve network-wide server moderation, player management, and cross-server synchronization.
 
@@ -16,7 +16,8 @@ This mod provides essential infrastructure tools and staff utilities designed to
   Automatically resets all lingering player sessions to `OFFLINE` for the current server on restart.
 
 - ✅ **Admin Command Utilities**
-    - `/showrules <player>` — force a player to re-read and re-agree to the rules
+    - `/showrules <player>` — force a player to re-read and re-agree to the rules  
+      This also logs a warning entry in the database with the admin who issued the command.
 
 - ✅ **Player Commands**
     - `/agree` and `/decline` — clickable command integration with in-game prompts
@@ -38,6 +39,14 @@ CREATE TABLE IF NOT EXISTS player_sessions (
     last_seen TIMESTAMP NULL,
     status VARCHAR(16) NOT NULL,
     PRIMARY KEY (uuid, server)
+);
+
+CREATE TABLE IF NOT EXISTS warnings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user CHAR(36) NOT NULL,
+    warnedBy CHAR(36) NOT NULL,
+    issuedAt DATETIME NOT NULL,
+    reason TEXT NOT NULL
 );
 ```
 
